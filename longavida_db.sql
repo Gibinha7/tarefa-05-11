@@ -1,0 +1,50 @@
+﻿create database longavida_db;
+use longavida_db;
+
+CREATE TABLE plano (
+    numero CHAR(2) NOT NULL PRIMARY KEY,
+    descricao CHAR(30),
+    valor DECIMAL(10, 2)
+);
+
+CREATE TABLE associado (
+    plano CHAR(2) NOT NULL,
+    nome CHAR(40) NOT NULL PRIMARY KEY,
+    endereco CHAR(35),
+    cidade CHAR(20),
+    estado CHAR(2),
+    cep CHAR(9)
+);
+
+INSERT INTO plano (numero, Descricao, Valor) VALUES
+('B1', 'Básico 1', 200.00),
+('B2', 'Básico 2', 150.00),
+('B3', 'Básico 3', 100.00),
+('E1', 'Executivo 1', 350.00),
+('E2', 'Executivo 2', 300.00),
+('E3', 'Executivo 3', 250.00),
+('M1', 'Master 1', 500.00),
+('M2', 'Master 2', 450.00),
+('M3', 'Master 3', 400.00);
+
+INSERT INTO associado (plano, nome, endereco, cidade, estado, cep) VALUES
+('B1', 'JOSE ANTONIO DA SILVA', 'R. FELIPE DO AMARAL, 3450', 'COTIA', 'SP', '06700-000'),
+('B1', 'MARIA DA SILVA SOBRINHO', 'R. FELIPE DE JESUS, 1245', 'DIADEMA', 'SP', '09960-170'),
+('B1', 'PEDRO JOSE DE OLIVEIRA', 'R. AGRIPINO DIAS, 155', 'COTIA', 'SP', '06700-011'),
+('B2', 'ANTONIA DE FERNANDES', 'R. PE EZEQUIEL, 567', 'DIADEMA', 'SP', '09960-175'),
+('B2', 'ANTONIO DO PRADO', 'R. INDIO TABAJARA, 55', 'GUARULHOS', 'SP', '07132-999'),
+('B3', 'WILSON DE SENA', 'R. ARAPIRACA, 1234', 'OSASCO', 'SP', '06293-001'),
+('B3', 'SILVIA DE ABREU', 'R. DR. JOAO DA SILVA, 5', 'SANTO ANDRE', 'SP', '09172-112'),
+('E1', 'ODETE DA CONCEIÇÃO', 'R. VOLUNTARIOS DA PATRIA, 10', 'SÃO PAULO', 'SP', '02010-550'),
+('E2', 'JOAO CARLOS MACEDO', 'R. VISTA ALEGRE, 500', 'SÃO PAULO', 'SP', '04343-990'),
+('E3', 'CONCEIÇÃO DA SILVA', 'AV. VITORIO DO AMPARO, 11', 'MAUA', 'SP', '09312-888'),
+('E3', 'PAULO BRUNO AMARAL', 'R. ARGENZIO BRILHANTE, 88', 'BARUERI', 'SP', '06460-999'),
+('E3', 'WALDENICE DE OLIVEIRA', 'R. OURO VELHO, 12', 'BARUERI', 'SP', '06460-998'),
+('E3', 'MARCOS DO AMARAL', 'R. DO OUVIDOR, 67', 'GUARULHOS', 'SP', '07031-555'),
+('M1', 'MURILO DE SANTANA', 'R. PRATA DA CASA', 'BARUERI', 'SP', '06455-111'),
+('M1', 'LUIZA ONOFRE FREITAS', 'R. VICENTE DE ABREU, 55', 'SANTO ANDRE', 'SP', '09060-667'),
+('M2', 'MELISSA DE ALMEIDA', 'R. FERNANDO ANTONIO, 2345', 'SÃO PAULO', 'SP', '04842-987'),
+('M2', 'JOAO INACIO DA CONCEIÇÃO', 'R. PENÉLOPE CHARMOSA, 34', 'SUZANO', 'SP', '08670-888'),
+('M3', 'AUGUSTA DE ABREU', 'AV. RIO DA SERRA, 909', 'SANTO ANDRE', 'SP', '09061-333'),
+('M3', 'ILDA DE MELO DA CUNHA', 'AV. POR DO SOL, 546', 'SANTO ANDRE', 'SP', '09199-444'),
+('M3', 'MARCOS DA CUNHA', 'AV. PEDROSO DE MORAES', 'SÃO PAULO', 'SP', '04040-444');
